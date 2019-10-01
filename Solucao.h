@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include "myexception.h"
 #include "Vetor.h"
 #include "Ponto.h"
@@ -73,6 +74,8 @@ class Solucao {
 		void debugando( string s ) const;
 		void AGM_Prim2();
 
+		ofstream ptSteiner;
+		ofstream ptFixos;
 		ostream& operator<< ( ostream& in ) const;
 
 		friend ostream& operator<< ( ostream& out, const Solucao& b ) {
@@ -83,6 +86,10 @@ class Solucao {
 //			out << "{";
 			for( int i = 0; i < b.num_obrigatorios; ++i ) {
 				out << i+1 << ": " << b.getObrigatorios()[i];
+
+				ptFixos.open ("ptFixos.tsv");
+				ptFixos << b.getObrigatorios()[i];
+				ptFixos.close();
 //				out << "{ ";
 //				for( int j = 0; j < dimensao; ++j ) {
 //					if( j != 0 )
@@ -93,6 +100,7 @@ class Solucao {
 //				if( i != b.num_obrigatorios-1 )
 //					out << "," << endl;
 			}
+			
 //			out << "};";
 			out << endl;
 //			out << "Grau: " << endl;
@@ -105,6 +113,10 @@ class Solucao {
 //			out << "{";
 			for( int i = 0; i < b.num_steiner; ++i ) {
 				out << b.num_obrigatorios+i+1 << ": " << b.getSteiner()[i];
+				
+				ptSteiner.open ("ptSteiner.tsv");
+				ptSteiner << b.getSteiner()[i];
+				ptSteiner.close();
 //				out << "{ ";
 //				for( int j = 0; j < dimensao; ++j ) {
 //					if( j != 0 )
