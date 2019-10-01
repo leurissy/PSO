@@ -7,7 +7,7 @@ set nokey
 numPontos=4
 
 set key off
-splot 'gnuplot/edges.tsv' using 1:2:3:($4-$1):($6-$3) with lines lc rgb "green" lw 2 notitle, \
+splot 'gnuplot/edges.tsv' using 1:2:3 with lines lc rgb "green" lw 2 notitle, \
 'gnuplot/xyz.tsv' using 1:2:3 with points lc rgb "red" pointsize 3 pointtype 7,\
 'gnuplot/xyz.tsv' using 1:2:3:($0+numPontos+1) with labels tc rgb "white" offset (0,0) font 'Arial Bold' notitle,\
 'gnuplot/xyzFixos.tsv' using 1:2:3 with points lc rgb "black" pointsize 3 pointtype 7,\
