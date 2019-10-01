@@ -1,0 +1,57 @@
+# Project: Steiner
+
+CPP      = g++ -D__DEBUG__
+CC       = gcc -D__DEBUG__
+OBJ      = comum.o Grafo.o main.o Ponto.o Problema.o Solucao.o Tempo.o VetTop.o Smith.o HeapMinChave.o Grafo2.o
+LINKOBJ  = comum.o Grafo.o main.o Ponto.o Problema.o Solucao.o Tempo.o VetTop.o Smith.o HeapMinChave.o Grafo2.o
+# LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+# INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+# CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+BIN      = steiner.exe
+CXXFLAGS = $(CXXINCS) -msse2 -Ofast -std=gnu++11 -g3
+CFLAGS   = $(INCS) -msse2 -Ofast -std=gnu++11 -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+comum.o: comum.cpp
+	$(CPP) -c comum.cpp -o comum.o $(CXXFLAGS)
+
+Grafo.o: Grafo.cpp
+	$(CPP) -c Grafo.cpp -o Grafo.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Ponto.o: Ponto.cpp
+	$(CPP) -c Ponto.cpp -o Ponto.o $(CXXFLAGS)
+
+Problema.o: Problema.cpp
+	$(CPP) -c Problema.cpp -o Problema.o $(CXXFLAGS)
+
+Solucao.o: Solucao.cpp
+	$(CPP) -c Solucao.cpp -o Solucao.o $(CXXFLAGS)
+
+Tempo.o: Tempo.cpp
+	$(CPP) -c Tempo.cpp -o Tempo.o $(CXXFLAGS)
+
+VetTop.o: VetTop.cpp
+	$(CPP) -c VetTop.cpp -o VetTop.o $(CXXFLAGS)
+
+Smith.o: Smith.cpp
+	$(CPP) -c Smith.cpp -o Smith.o $(CXXFLAGS)
+
+HeapMinChave.o: HeapMinChave.cpp
+	$(CPP) -c HeapMinChave.cpp -o HeapMinChave.o $(CXXFLAGS)
+
+Grafo2.o: Grafo2.cpp
+	$(CPP) -c Grafo2.cpp -o Grafo2.o $(CXXFLAGS)
