@@ -139,11 +139,15 @@ class Solucao {
 				}
 			}
 			****/
-			for( int i = 0; i < b.tamanho; i++){ //}++i ) {
+			ofstream ptEdges;
+			ptEdges.open ("gnuplot/edges.tsv");
+			for( int i = 0; i < b.tamanho-1; i++){ //}++i ) {
 				out << i+1 << " -> ";
-				for( int j = 0; j < b.tamanho; j++ ) {
+				for( int j = i+1; j < b.tamanho; j++ ) {
 					if( b.grafo.temAresta(i,j) ) {
 						out << j+1 << " (" << b.distancia(i,j) << ") ";
+						//gravar os pontos das arestas aqui
+						ptEdges << b.getSteiner()[i+1] << endl;
 						if (i>j) {
 							valcalc=valcalc+b.distancia(i,j);
 						}
