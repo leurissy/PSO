@@ -75,7 +75,9 @@ class Solucao {
 		void AGM_Prim2();
 
 		ofstream ptSteiner;
+		ptSteiner.open ("ptSteiner.tsv");
 		ofstream ptFixos;
+		ptFixos.open ("ptFixos.tsv");
 		ostream& operator<< ( ostream& in ) const;
 
 		friend ostream& operator<< ( ostream& out, const Solucao& b ) {
@@ -85,11 +87,9 @@ class Solucao {
 			out << setprecision(6) << fixed;
 //			out << "{";
 			for( int i = 0; i < b.num_obrigatorios; ++i ) {
+				ptFixos << << b.getObrigatorios()[i];
 				out << i+1 << ": " << b.getObrigatorios()[i];
-
-				ptFixos.open ("ptFixos.tsv");
-				ptFixos << b.getObrigatorios()[i];
-				ptFixos.close();
+				
 //				out << "{ ";
 //				for( int j = 0; j < dimensao; ++j ) {
 //					if( j != 0 )
@@ -100,7 +100,7 @@ class Solucao {
 //				if( i != b.num_obrigatorios-1 )
 //					out << "," << endl;
 			}
-			
+			ptFixos.close();
 //			out << "};";
 			out << endl;
 //			out << "Grau: " << endl;
@@ -112,11 +112,10 @@ class Solucao {
 			out << setprecision(6) << fixed;
 //			out << "{";
 			for( int i = 0; i < b.num_steiner; ++i ) {
+				
+				ptSteiner << b.getSteiner()[i];
 				out << b.num_obrigatorios+i+1 << ": " << b.getSteiner()[i];
 				
-				ptSteiner.open ("ptSteiner.tsv");
-				ptSteiner << b.getSteiner()[i];
-				ptSteiner.close();
 //				out << "{ ";
 //				for( int j = 0; j < dimensao; ++j ) {
 //					if( j != 0 )
@@ -127,6 +126,7 @@ class Solucao {
 //				if( i != b.num_steiner-1 )
 //					out << "," << endl;
 			}
+			ptSteiner.close()
 //			out << "};";
 			out << endl;
 			out << "Arestas: " << endl;
