@@ -74,10 +74,6 @@ class Solucao {
 		void debugando( string s ) const;
 		void AGM_Prim2();
 
-		ofstream ptSteiner;
-		ptSteiner.open ("ptSteiner.tsv");
-		ofstream ptFixos;
-		ptFixos.open ("ptFixos.tsv");
 		ostream& operator<< ( ostream& in ) const;
 
 		friend ostream& operator<< ( ostream& out, const Solucao& b ) {
@@ -86,8 +82,10 @@ class Solucao {
 			out << "Obrigatorios: " << endl;
 			out << setprecision(6) << fixed;
 //			out << "{";
+			ofstream ptFixos;
+			ptFixos.open ("gnuplot/ptFixos.tsv");
 			for( int i = 0; i < b.num_obrigatorios; ++i ) {
-				ptFixos << << b.getObrigatorios()[i];
+				ptFixos << b.getObrigatorios()[i] << endl;
 				out << i+1 << ": " << b.getObrigatorios()[i];
 				
 //				out << "{ ";
@@ -111,9 +109,11 @@ class Solucao {
 			out << "Steiner: " << endl;
 			out << setprecision(6) << fixed;
 //			out << "{";
+			ofstream ptSteiner;
+			ptSteiner.open ("gnuplot/ptSteiner.tsv");
 			for( int i = 0; i < b.num_steiner; ++i ) {
 				
-				ptSteiner << b.getSteiner()[i];
+				ptSteiner << b.getSteiner()[i] << endl;
 				out << b.num_obrigatorios+i+1 << ": " << b.getSteiner()[i];
 				
 //				out << "{ ";
@@ -126,7 +126,7 @@ class Solucao {
 //				if( i != b.num_steiner-1 )
 //					out << "," << endl;
 			}
-			ptSteiner.close()
+			ptSteiner.close();
 //			out << "};";
 			out << endl;
 			out << "Arestas: " << endl;
