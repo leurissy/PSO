@@ -146,8 +146,9 @@ class Solucao {
 				for( int j = i+1; j < b.tamanho; j++ ) {
 					if( b.grafo.temAresta(i,j) ) {
 						out << j+1 << " (" << b.distancia(i,j) << ") ";
-						//gravar os pontos das arestas aqui
-						ptEdges << b.getSteiner()[i+1] << endl;
+						// //gravar os pontos das arestas aqui
+						// ptEdges << b.getObrigatorios()[i] << endl;
+						// ptEdges << b.getSteiner()[b.num_steiner-i] << "\n" << endl;
 						if (i>j) {
 							valcalc=valcalc+b.distancia(i,j);
 						}
@@ -161,6 +162,7 @@ class Solucao {
 				}
 				out << endl;
 			}
+			ptEdges.close();
 //			out << "Velocidade dos pontos de Steiner: " << endl;
 //			for( int i = 0; i < b.getSteiner().getTamanho(); ++i ) {
 //				out << b.getVelocidadePontosSteiner()[i];
