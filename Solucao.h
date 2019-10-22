@@ -147,8 +147,20 @@ class Solucao {
 					if( b.grafo.temAresta(i,j) ) {
 						out << j+1 << " (" << b.distancia(i,j) << ") ";
 						// //gravar os pontos das arestas aqui
-						// ptEdges << b.getObrigatorios()[i] << endl;
-						// ptEdges << b.getSteiner()[b.num_steiner-i] << "\n" << endl;
+
+						if(i<b.num_obrigatorios){
+                        	ptEdges << b.getObrigatorios()[i] << endl;
+						}
+						else{
+							ptEdges << b.getSteiner()[i-b.num_obrigatorios] << endl;	
+						}
+
+                        if(j<b.num_steiner){
+                        	ptEdges << b.getSteiner()[j] << "\n" << endl;
+						}else{
+							ptEdges << b.getSteiner()[j-b.num_obrigatorios] << "\n" << endl;	
+						}
+
 						if (i>j) {
 							valcalc=valcalc+b.distancia(i,j);
 						}
@@ -169,6 +181,7 @@ class Solucao {
 //			}
 			out << endl;
 			out << "Custo: " << b.custo() << " Custo2: " << valcalc << endl;
+			system("gnuplot plota.gnu");
 //			out << "Nao conformidade: " << b.getNaoConformidade() << endl;
 			return out;
 		}
