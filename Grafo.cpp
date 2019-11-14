@@ -56,6 +56,7 @@ bool Grafo::temAresta( int de, int para ) const {
 //	return vertice[de].is_present(para);
 }
 
+
 void Grafo::remAresta( int de,  int para ) {
  	if( de == para )
 		return;
@@ -147,10 +148,10 @@ void Grafo::copia_reduzindo( const Grafo& b ) {
 //		for( auto x : vertice[i] )
 //			cout << x << " ";
 //		cout << endl;
-		// verificando se há erros no algoritmo. Pode ser removida na versao definitiva
+		// verificando se hï¿½ erros no algoritmo. Pode ser removida na versao definitiva
 		for( int x : vertice[i] ) {
 			if( x >= num_vertices )
-				throw myexception("Erro em Grafo::copia_reduzindo() - vertice fora do limite máximo (num_vertices).");
+				throw myexception("Erro em Grafo::copia_reduzindo() - vertice fora do limite mï¿½ximo (num_vertices).");
 		}
 	}
 }
