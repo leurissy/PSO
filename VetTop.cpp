@@ -25,7 +25,7 @@ Vetor<Aresta> vetTop2Grafo( const Vetor<int>& vetTop ) {
 	return arestas;
 }
 
-void Grafo2vetTopRecur( Vetor<Aresta>& arestas, int num_arestas, Vetor<int>& vet ) {
+void Grafo2vetTopRecur( Arranjo<Aresta>& arestas, int num_arestas, Vetor<int>& vet ) {
 	int tamanho = arestas.size() + 1;
 	if( tamanho % 2 != 0 )
 		throw myexception("Grafo2vetTop - Quantidade de arestas incompativel.");
@@ -111,11 +111,11 @@ void Grafo2vetTopRecur( Vetor<Aresta>& arestas, int num_arestas, Vetor<int>& vet
 //	cout << "Arestas" << endl << arestas << endl;
 }
 
-Vetor<int> Grafo2vetTop( const Vetor<Aresta>& arestas2 ) {
+Vetor<int> Grafo2vetTop( const Arranjo<Aresta>& arestas2 ) {
 	int num_arestas = arestas2.getTamanho();
 	int tamanho = num_arestas+1;
 	int num_obrigatorios = (tamanho+2)/2;
-	Vetor<Aresta> arestas(arestas2);
+	Arranjo<Aresta> arestas(arestas2);
 	Vetor<int> vetTop(num_obrigatorios-3);
 
 	Grafo2vetTopRecur( arestas, num_arestas, vetTop );

@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <cmath>
+#include "comum.h"
 #include "Vetor.h"
 #include "Ponto.h"
 #include "Aresta.h"
@@ -12,8 +13,6 @@
 #define NMAX  1001  /* max number of sites permitted */
 
 namespace std {
-
-inline double drand() { (double)rand() / (double)RAND_MAX; }
 
 class Smith {
 	double escala;
@@ -39,13 +38,12 @@ public:
 	void setObrigatorios( const Vetor<Ponto>& obrigatorios );
 	void setSteiner( const Vetor<Ponto>& steiner );
 	void buildtree( const Vetor<int>& vet );
-	void buildtree( const Vetor<Aresta>& arestas );
+	void buildtree( const Arranjo<Aresta>& arestas );
 	void buildtree( const Grafo& grafo );
 	double length();
 	double error();
 	double otimiza_maior_que_3( double precisao = 0.0001 );
 	Vetor<Ponto> getSteiner() const;
-	//Vetor<Aresta> getAresta() const;
 	ostream& operator<< ( ostream& in ) const { return in; }
 
 	friend ostream& operator<< ( ostream& out, const Smith& b ) {

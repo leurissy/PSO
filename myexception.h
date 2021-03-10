@@ -5,17 +5,18 @@
 
 namespace std {
 
-class myexception: public exception
-{	
-	private:
-		const char *mensagem;
-	public:
-		myexception( const char* m ) : mensagem(m) { }
-	virtual const char* what() const throw()
-	{
-		return mensagem;
-	}
-};
+    class myexception : public exception {
+    private:
+        const char *mensagem;
+    public:
+
+        myexception(const char* m) : mensagem(m) {
+        }
+
+        virtual const char* what() const  throw () override {
+            return mensagem;
+        }
+    };
 
 } //namespace std
 

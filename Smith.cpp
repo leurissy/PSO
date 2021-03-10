@@ -110,7 +110,7 @@ void Smith::buildtree( const Vetor<int>& vet ) {
 	}
 }
 
-void Smith::buildtree( const Vetor<Aresta>& arestas ) {
+void Smith::buildtree( const Arranjo<Aresta>& arestas ) {
 	Vetor<int> grau(num_obrigatorios-1);
 	int num_arestas;
 	if( ( num_arestas = arestas.getTamanho() ) != 2*num_obrigatorios-3 )
@@ -271,12 +271,6 @@ Vetor<Ponto> Smith::getSteiner() const {
 	}
 	return steiner;
 }
-
-/*
-Vetor<Aresta> getAresta() const{
-    
-}
-*/
 
 } // namespace std
 

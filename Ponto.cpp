@@ -59,7 +59,7 @@ Ponto Ponto::geraAleatorio( const Ponto& canto_superior, const Ponto& canto_infe
 
 	for( int j = 0; j < dimensao; j++ ) {
 		aleatorio[j] = (canto_superior[j] - canto_inferior[j]) *
-			(double)rand() / (double)RAND_MAX + canto_inferior[j];
+			drand() + canto_inferior[j];
 	}
 
 	return aleatorio;

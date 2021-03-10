@@ -21,6 +21,9 @@ class Aresta {
 		bool operator< ( const Aresta& b ) const {
 			return (this->peso < b.peso);
 		}
+		bool operator> ( const Aresta& b ) const {
+			return (this->peso > b.peso);
+		}
 		ostream& operator<< ( ostream& in ) const {
     		return in;
 		}

@@ -13,7 +13,7 @@ protected:
     T *v;
 public:
     Arranjo();
-    ~Arranjo();
+    virtual ~Arranjo();
     Arranjo(int n);
     Arranjo(const Arranjo<T>& b);
     Arranjo( initializer_list<T> args );

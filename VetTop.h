@@ -9,7 +9,7 @@
 namespace std {
 
 Vetor<Aresta> vetTop2Grafo( const Vetor<int>& vetTop );
-Vetor<int> Grafo2vetTop( const Vetor<Aresta>& arestas2 );
+Vetor<int> Grafo2vetTop( const Arranjo<Aresta>& arestas2 );
 Vetor<int> Grafo2vetTop( Grafo& grafo, Vetor<Ponto>& steiner );
 void Grafo2vetTopRecur( Vetor<Aresta>& arestas, int num_arestas, Vetor<int>& vet );
 

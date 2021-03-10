@@ -1,58 +1,128 @@
-# Project: Steiner
+#
+#  There exist several targets which are by default empty and which can be 
+#  used for execution of your targets. These targets are usually executed 
+#  before and after some main targets. They are: 
+#
+#     .build-pre:              called before 'build' target
+#     .build-post:             called after 'build' target
+#     .clean-pre:              called before 'clean' target
+#     .clean-post:             called after 'clean' target
+#     .clobber-pre:            called before 'clobber' target
+#     .clobber-post:           called after 'clobber' target
+#     .all-pre:                called before 'all' target
+#     .all-post:               called after 'all' target
+#     .help-pre:               called before 'help' target
+#     .help-post:              called after 'help' target
+#
+#  Targets beginning with '.' are not intended to be called on their own.
+#
+#  Main targets can be executed directly, and they are:
+#  
+#     build                    build a specific configuration
+#     clean                    remove built files from a configuration
+#     clobber                  remove all built files
+#     all                      build all configurations
+#     help                     print help mesage
+#  
+#  Targets .build-impl, .clean-impl, .clobber-impl, .all-impl, and
+#  .help-impl are implemented in nbproject/makefile-impl.mk.
+#
+#  Available make variables:
+#
+#     CND_BASEDIR                base directory for relative paths
+#     CND_DISTDIR                default top distribution directory (build artifacts)
+#     CND_BUILDDIR               default top build directory (object files, ...)
+#     CONF                       name of current configuration
+#     CND_PLATFORM_${CONF}       platform name (current configuration)
+#     CND_ARTIFACT_DIR_${CONF}   directory of build artifact (current configuration)
+#     CND_ARTIFACT_NAME_${CONF}  name of build artifact (current configuration)
+#     CND_ARTIFACT_PATH_${CONF}  path to build artifact (current configuration)
+#     CND_PACKAGE_DIR_${CONF}    directory of package (current configuration)
+#     CND_PACKAGE_NAME_${CONF}   name of package (current configuration)
+#     CND_PACKAGE_PATH_${CONF}   path to package (current configuration)
+#
+# NOCDDL
 
-CPP      = g++ -D__DEBUG__ -lglpk 
-# CC       = gcc -D__DEBUG__
-OBJ      = comum.o Grafo.o main.o Ponto.o Problema.o Solucao.o Tempo.o VetTop.o Smith.o HeapMinChave.o Grafo2.o
-LINKOBJ  = comum.o Grafo.o main.o Ponto.o Problema.o Solucao.o Tempo.o VetTop.o Smith.o HeapMinChave.o Grafo2.o
-# LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
-# INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
-# CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
-BIN      = steiner
-CXXFLAGS = $(CXXINCS) -std=c++11  -fmax-errors=5
-CFLAGS   = $(INCS) -std=c++11 -fmax-errors=5
 
-RM       = rm -f
-
-.PHONY: all all-before all-after clean clean-custom
-
-all: all-before $(BIN) all-after
+# Environment 
+MKDIR=mkdir
+CP=cp
+CCADMIN=CCadmin
 
 
-clean: clean-custom
-	${RM} $(OBJ) $(BIN)
+# build
+build: .build-post
 
-$(BIN): $(OBJ)
-	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+.build-pre:
+# Add your pre 'build' code here...
 
-comum.o: comum.cpp
-	$(CPP) -c comum.cpp -o comum.o $(CXXFLAGS)
+.build-post: .build-impl
+# Add your post 'build' code here...
 
-Grafo.o: Grafo.cpp
-	$(CPP) -c Grafo.cpp -o Grafo.o $(CXXFLAGS)
 
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+# clean
+clean: .clean-post
 
-Ponto.o: Ponto.cpp
-	$(CPP) -c Ponto.cpp -o Ponto.o $(CXXFLAGS)
+.clean-pre:
+# Add your pre 'clean' code here...
 
-Problema.o: Problema.cpp
-	$(CPP) -c Problema.cpp -o Problema.o $(CXXFLAGS)
+.clean-post: .clean-impl
+# Add your post 'clean' code here...
 
-Solucao.o: Solucao.cpp
-	$(CPP) -c Solucao.cpp -o Solucao.o $(CXXFLAGS)
 
-Tempo.o: Tempo.cpp
-	$(CPP) -c Tempo.cpp -o Tempo.o $(CXXFLAGS)
+# clobber
+clobber: .clobber-post
 
-VetTop.o: VetTop.cpp
-	$(CPP) -c VetTop.cpp -o VetTop.o $(CXXFLAGS)
+.clobber-pre:
+# Add your pre 'clobber' code here...
 
-Smith.o: Smith.cpp
-	$(CPP) -c Smith.cpp -o Smith.o $(CXXFLAGS)
+.clobber-post: .clobber-impl
+# Add your post 'clobber' code here...
 
-HeapMinChave.o: HeapMinChave.cpp
-	$(CPP) -c HeapMinChave.cpp -o HeapMinChave.o $(CXXFLAGS)
 
-Grafo2.o: Grafo2.cpp
-	$(CPP) -c Grafo2.cpp -o Grafo2.o $(CXXFLAGS)
+# all
+all: .all-post
+
+.all-pre:
+# Add your pre 'all' code here...
+
+.all-post: .all-impl
+# Add your post 'all' code here...
+
+
+# build tests
+build-tests: .build-tests-post
+
+.build-tests-pre:
+# Add your pre 'build-tests' code here...
+
+.build-tests-post: .build-tests-impl
+# Add your post 'build-tests' code here...
+
+
+# run tests
+test: .test-post
+
+.test-pre: build-tests
+# Add your pre 'test' code here...
+
+.test-post: .test-impl
+# Add your post 'test' code here...
+
+
+# help
+help: .help-post
+
+.help-pre:
+# Add your pre 'help' code here...
+
+.help-post: .help-impl
+# Add your post 'help' code here...
+
+
+
+# include project implementation makefile
+include nbproject/Makefile-impl.mk
+
+# include project make variables
+include nbproject/Makefile-variables.mk

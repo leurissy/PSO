@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Arquivos de Cabeçalho"
+                   projectFiles="true">
+      <itemPath>Aresta.h</itemPath>
+      <itemPath>Arranjo.h</itemPath>
+      <itemPath>GetOpt.h</itemPath>
+      <itemPath>Grafo.h</itemPath>
+      <itemPath>Grafo2.h</itemPath>
+      <itemPath>HeapMax.h</itemPath>
+      <itemPath>HeapMin.h</itemPath>
+      <itemPath>HeapMinChave.h</itemPath>
+      <itemPath>Lista.h</itemPath>
+      <itemPath>Ponto.h</itemPath>
+      <itemPath>Problema.h</itemPath>
+      <itemPath>Smith.h</itemPath>
+      <itemPath>Solucao.h</itemPath>
+      <itemPath>SolucaoClusterizada.h</itemPath>
+      <itemPath>Tempo.h</itemPath>
+      <itemPath>Vertice.h</itemPath>
+      <itemPath>VerticeChave.h</itemPath>
+      <itemPath>VetTop.h</itemPath>
+      <itemPath>Vetor.h</itemPath>
+      <itemPath>comum.h</itemPath>
+      <itemPath>myexception.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Arquivos de Código-Fonte"
+                   projectFiles="true">
+      <itemPath>GetOpt.cpp</itemPath>
+      <itemPath>Grafo.cpp</itemPath>
+      <itemPath>Grafo2.cpp</itemPath>
+      <itemPath>HeapMinChave.cpp</itemPath>
+      <itemPath>Ponto.cpp</itemPath>
+      <itemPath>Problema.cpp</itemPath>
+      <itemPath>Smith.cpp</itemPath>
+      <itemPath>Solucao.cpp</itemPath>
+      <itemPath>SolucaoClusterizada.cpp</itemPath>
+      <itemPath>Tempo.cpp</itemPath>
+      <itemPath>VetTop.cpp</itemPath>
+      <itemPath>comum.cpp</itemPath>
+      <itemPath>drand.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Arquivos de Recurso"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Arquivos de Teste"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Arquivos Importantes"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="Aresta.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arranjo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GetOpt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GetOpt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Grafo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Grafo2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Grafo2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapMax.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapMin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapMinChave.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapMinChave.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ponto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ponto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Problema.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Problema.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Smith.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Smith.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Solucao.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Solucao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SolucaoClusterizada.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SolucaoClusterizada.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tempo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tempo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vertice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VerticeChave.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VetTop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VetTop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vetor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="comum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="comum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="drand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="myexception.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="Aresta.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Arranjo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GetOpt.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GetOpt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Grafo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Grafo2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Grafo2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapMax.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapMin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapMinChave.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapMinChave.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ponto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ponto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Problema.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Problema.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Smith.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Smith.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Solucao.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Solucao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SolucaoClusterizada.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SolucaoClusterizada.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tempo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tempo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vertice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VerticeChave.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VetTop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VetTop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vetor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="comum.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="comum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="drand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="myexception.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
